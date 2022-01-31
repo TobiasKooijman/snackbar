@@ -16,11 +16,17 @@ if int(vraag1) > 0:
     if saus1.lower() == "ja":
         vgg1 = 2.25
 vraag2 = input('Hoeveel frikadellen (per stuk €1,95)? ')
+if int(vraag2) > 0:
+    saus2 = input('wilt u een gewone, XXL(€0,50) of een vega(€-0,25)? [gewoon/xxl/vega] ')
+    if saus2.lower() == "xxl":
+        vgg2 += 0.50
+    if saus2.lower() == "vega":
+        vgg2 -= 0.25
 vraag3 = input('Hoeveel kroketten (per stuk €2,15)? ')
 
 vg1 = int(vraag1) * vgg1
-vg2 = int(vraag2) * 1.95
-vg3 = int(vraag3) * 2.15
+vg2 = int(vraag2) * vgg2
+vg3 = int(vraag3) * vgg3
 
 
 
@@ -46,18 +52,18 @@ if int(vraag1) > 0:
     if int(vraag1) == 1:
         print(vraag1, " stuk patat (€",vgg1,")")
     else:
-        print(vraag1, " stukken patat (€1,75)")
+        print(vraag1, " stukken patat (€",vgg1,")")
 
 if int(vraag2) > 0:
     if int(vraag2) == 1:
-        print(vraag2, " frikandel (€1,95)")
+        print(vraag2, " frikandel (€",vgg2,")")
     else:
-        print(vraag2, " frikandellen (€1,95)")
+        print(vraag2, " frikandellen (€",vgg2,")")
 if int(vraag3) > 0:
     if int(vraag3) == 1:
-        print(vraag3, " kroket (€2,15)")
+        print(vraag3, " kroket (€",vgg3,")")
     else:
-        print(vraag3, " kroketten (€2,15)")
+        print(vraag3, " kroketten (€",vgg3,")")
 if geld < 10:
     print("bestelkosten (€1,50)")
 print("------------------")
