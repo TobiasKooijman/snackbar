@@ -4,14 +4,21 @@ print("Welkom bij Cees Patat!")
 print("")
 geld = 0
 totaal = 0
+vgg1 = 1.75
+vgg2 = 1.95
+vgg3 = 2.15
 
 #Vragen
 
 vraag1 = input('Hoeveel patat (per stuk €1,75)? ')
+if int(vraag1) > 0:
+    saus1 = input('wilt u er saus bij? (€0,50) [ja/nee] ')
+    if saus1.lower() == "ja":
+        vgg1 = 2.25
 vraag2 = input('Hoeveel frikadellen (per stuk €1,95)? ')
 vraag3 = input('Hoeveel kroketten (per stuk €2,15)? ')
 
-vg1 = int(vraag1) * 1.75
+vg1 = int(vraag1) * vgg1
 vg2 = int(vraag2) * 1.95
 vg3 = int(vraag3) * 2.15
 
@@ -37,7 +44,7 @@ print("    BONNETJE:")
 print("")
 if int(vraag1) > 0:
     if int(vraag1) == 1:
-        print(vraag1, " stuk patat (€1.75)")
+        print(vraag1, " stuk patat (€",vgg1,")")
     else:
         print(vraag1, " stukken patat (€1,75)")
 
