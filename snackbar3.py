@@ -11,9 +11,10 @@ brood = 0
 frik = 0
 xxl = 0
 vega = 0
+looper = 0
 gewn = 0
 #Vragen
-
+while looper == 0:
     vraag1 = input('Hoeveel patat (per stuk €1,75)? ')
     if int(vraag1) > 0:
         saus1 = input('wilt u er saus bij? (€0,50) [ja/nee] ')
@@ -56,6 +57,10 @@ gewn = 0
     else:
         totaal = geld
     round(int(totaal))
+
+    opnieuw = input('wilt u nog meer bestellen? [ja/nee] ')
+    if opnieuw.lower() == "nee":
+        looper = 1
 
 #Bonnetje
 print("             CEES PATAT")
